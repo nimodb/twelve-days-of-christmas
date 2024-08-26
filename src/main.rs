@@ -5,7 +5,12 @@ fn main() {
 
 fn print_lyrics() {
     for day in 1..=12 {
-        println!("On the {} day of christmas...", get_ordinal(day));
+        println!(
+            "On the {} day of Christmas, my true love gave to me:",
+            get_ordinal(day)
+        );
+        print_gifts(day);
+        println!();
     }
 }
 
@@ -24,5 +29,23 @@ fn get_ordinal(day: u8) -> &'static str {
         11 => "eleventh",
         12 => "twelfth",
         _ => "",
+    }
+}
+
+fn print_gifts(day: u8) {
+    match day {
+        12 => println!("12 Drummers Drumming"),
+        11 => println!("11 Pipers Piping"),
+        10 => println!("10 Lords a Leaping"),
+        9 => println!("9 Ladies Dancing"),
+        8 => println!("8 Maids a Milking"),
+        7 => println!("7 Swans a Swimming"),
+        6 => println!("6 Geese a Laying"),
+        5 => println!("5 Golden Rings"),
+        4 => println!("4 Calling Birds"),
+        3 => println!("3 French Hens"),
+        2 => println!("2 Turtle Doves"),
+        1 => println!("A Partridge in a Pear Tree"),
+        _ => (),
     }
 }
